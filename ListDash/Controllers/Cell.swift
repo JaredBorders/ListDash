@@ -11,6 +11,8 @@ import UIKit
 class Cell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var itemsButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,15 @@ class Cell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        label.text = "Deleted"
+    }
+    
+    
+    @IBAction func itemsButtonPressed(_ sender: UIButton) {
+        label.text = "Items"
     }
     
 }
