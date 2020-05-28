@@ -33,12 +33,20 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-4C-J1g" userLabel="deleteButton">
                         <rect key="frame" x="265" y="40" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="EXn-2u-hBi"/>
+                            <constraint firstAttribute="width" constant="30" id="qk6-se-1eb"/>
+                        </constraints>
                         <connections>
                             <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Le-ww-bV6"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prz-ym-054" userLabel="itemsButton">
                         <rect key="frame" x="310" y="39" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="VCl-z0-DHK"/>
+                            <constraint firstAttribute="height" constant="30" id="wGZ-w2-IT0"/>
+                        </constraints>
                         <connections>
                             <action selector="itemsButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="btA-ta-or7"/>
                         </connections>
@@ -66,7 +74,7 @@
                 <outlet property="itemsButton" destination="prz-ym-054" id="8XG-2d-jiZ"/>
                 <outlet property="label" destination="Dxw-bg-63A" id="vs2-NH-LRa"/>
             </connections>
-            <point key="canvasLocation" x="-123.18840579710145" y="64.955357142857139"/>
+            <point key="canvasLocation" x="-136.23188405797103" y="66.964285714285708"/>
         </tableViewCell>
     </objects>
     <resources>
@@ -75,7 +83,7 @@
             <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Label">
-            <color red="0.31779623029999998" green="0.33318459989999999" blue="0.3410648704" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31799998879432678" green="0.33300000429153442" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

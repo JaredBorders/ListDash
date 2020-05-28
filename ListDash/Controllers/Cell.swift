@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol CellDelegate {
+    func didPressDelete()
+    func didPressItems()
+}
+
 class Cell: UITableViewCell {
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var itemsButton: UIButton!
+    
+    var delegate: CellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +33,11 @@ class Cell: UITableViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        label.text = "Deleted"
     }
     
     
     @IBAction func itemsButtonPressed(_ sender: UIButton) {
-        label.text = "Items"
+        delegate?.didPressItems()
     }
     
 }

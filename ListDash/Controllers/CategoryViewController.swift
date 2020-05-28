@@ -10,8 +10,11 @@ import UIKit
 import ChameleonFramework
 
 class CategoryViewController: UIViewController {
+    
+    var tempArray = ["Homework", "Work", "Home", "Reading", "Shopping"]
 
     @IBOutlet weak var tableView: UITableView!
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +23,71 @@ class CategoryViewController: UIViewController {
         tableView.backgroundColor = K.backgroundColor
         
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(UINib(nibName: K.reusableCellID, bundle: nil), forCellReuseIdentifier: K.reusableCellID)
     }
     
+    //MARK: - Add Category
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
+            
+            if let text = textField.text {
+                self.tempArray.append(text)
+            }
+            
+            self.tableView.reloadData()
+                
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "New Category"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+
 }
 
-extension CategoryViewController: UITableViewDataSource, UITableViewDelegate {
+//MARK: - Table View Data Source Methods
+
+extension CategoryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 25
+        return tempArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCellID, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCellID, for: indexPath) as! Cell
+        cell.delegate = self
+        index = indexPath.row
+        cell.label.text = tempArray[indexPath.row]
         return cell
     }
+}
+
+//MARK: - Custom Cell Delegate Methods
+
+extension CategoryViewController: CellDelegate {
+    func didPressDelete() {
+        
+    }
+    
+    func didPressItems() {
+        performSegue(withIdentifier: K.toItemsSegueID, sender: self)
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // let destinationVC = segue.destination as! ItemsViewController
+
+    }
+    
 }
