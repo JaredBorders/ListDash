@@ -10,7 +10,7 @@ import UIKit
 
 protocol CellDelegate {
     func didPressDelete()
-    func didPressItems()
+    func didPressItems(atIndex index: Int)
 }
 
 class Cell: UITableViewCell {
@@ -20,6 +20,7 @@ class Cell: UITableViewCell {
     @IBOutlet weak var itemsButton: UIButton!
     
     var delegate: CellDelegate?
+    var index: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,6 @@ class Cell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -37,7 +37,7 @@ class Cell: UITableViewCell {
     
     
     @IBAction func itemsButtonPressed(_ sender: UIButton) {
-        delegate?.didPressItems()
+        delegate?.didPressItems(atIndex: (index?.row)!)
     }
     
 }

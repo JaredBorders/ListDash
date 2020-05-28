@@ -74,7 +74,7 @@
                 <outlet property="itemsButton" destination="prz-ym-054" id="8XG-2d-jiZ"/>
                 <outlet property="label" destination="Dxw-bg-63A" id="vs2-NH-LRa"/>
             </connections>
-            <point key="canvasLocation" x="-136.23188405797103" y="66.964285714285708"/>
+            <point key="canvasLocation" x="-157" y="21"/>
         </tableViewCell>
     </objects>
     <resources>

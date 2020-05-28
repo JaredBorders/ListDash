@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0C11CC589288663B22D572A9 /* Pods_ListDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46E25D5AF2F69CBA793E025 /* Pods_ListDash.framework */; };
+		B80E0BCC248050CC009FEC55 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E0BCA248050CC009FEC55 /* ItemCell.swift */; };
+		B80E0BCD248050CC009FEC55 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80E0BCB248050CC009FEC55 /* ItemCell.xib */; };
 		B83CE8D4247E11AB0014FA35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8D3247E11AB0014FA35 /* AppDelegate.swift */; };
 		B83CE8D6247E11AB0014FA35 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8D5247E11AB0014FA35 /* SceneDelegate.swift */; };
 		B83CE8D8247E11AB0014FA35 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8D7247E11AB0014FA35 /* CategoryViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		7BC19371DD8285031AF64D1C /* Pods-ListDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListDash.release.xcconfig"; path = "Target Support Files/Pods-ListDash/Pods-ListDash.release.xcconfig"; sourceTree = "<group>"; };
+		B80E0BCA248050CC009FEC55 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		B80E0BCB248050CC009FEC55 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		B83CE8D0247E11AB0014FA35 /* ListDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B83CE8D3247E11AB0014FA35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B83CE8D5247E11AB0014FA35 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +60,6 @@
 				E8A7A50D31E35BDC22C656BE /* Pods-ListDash.debug.xcconfig */,
 				7BC19371DD8285031AF64D1C /* Pods-ListDash.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -97,8 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				B83CE8D7247E11AB0014FA35 /* CategoryViewController.swift */,
-				B83CE8EB247E12880014FA35 /* ItemsViewController.swift */,
 				B83CE8E7247E12720014FA35 /* Cell.swift */,
+				B83CE8EB247E12880014FA35 /* ItemsViewController.swift */,
+				B80E0BCA248050CC009FEC55 /* ItemCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,6 +112,7 @@
 			children = (
 				B83CE8D9247E11AB0014FA35 /* Main.storyboard */,
 				B83CE8E8247E12720014FA35 /* Cell.xib */,
+				B80E0BCB248050CC009FEC55 /* ItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			files = (
 				B83CE8E0247E11AB0014FA35 /* LaunchScreen.storyboard in Resources */,
 				B83CE8EA247E12720014FA35 /* Cell.xib in Resources */,
+				B80E0BCD248050CC009FEC55 /* ItemCell.xib in Resources */,
 				B83CE8DD247E11AB0014FA35 /* Assets.xcassets in Resources */,
 				B83CE8DB247E11AB0014FA35 /* Main.storyboard in Resources */,
 			);
@@ -248,6 +254,7 @@
 				B83CE8D8247E11AB0014FA35 /* CategoryViewController.swift in Sources */,
 				B83CE8E9247E12720014FA35 /* Cell.swift in Sources */,
 				B83CE8D4247E11AB0014FA35 /* AppDelegate.swift in Sources */,
+				B80E0BCC248050CC009FEC55 /* ItemCell.swift in Sources */,
 				B83CE8D6247E11AB0014FA35 /* SceneDelegate.swift in Sources */,
 				B83CE8F1247E12D20014FA35 /* Constants.swift in Sources */,
 			);

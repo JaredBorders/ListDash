@@ -14,7 +14,6 @@ class CategoryViewController: UIViewController {
     var tempArray = ["Homework", "Work", "Home", "Reading", "Shopping"]
 
     @IBOutlet weak var tableView: UITableView!
-    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,7 @@ class CategoryViewController: UIViewController {
         tableView.backgroundColor = K.backgroundColor
         
         tableView.dataSource = self
-        tableView.register(UINib(nibName: K.reusableCellID, bundle: nil), forCellReuseIdentifier: K.reusableCellID)
+        tableView.register(UINib(nibName: K.categoryCellNibName, bundle: nil), forCellReuseIdentifier: K.categoryCellReuseIdentifier)
     }
     
     //MARK: - Add Category
@@ -63,10 +62,13 @@ extension CategoryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.reusableCellID, for: indexPath) as! Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryCellReuseIdentifier, for: indexPath) as! Cell
+        
         cell.delegate = self
-        index = indexPath.row
+        cell.index = indexPath
+        
         cell.label.text = tempArray[indexPath.row]
+        
         return cell
     }
 }
@@ -74,11 +76,12 @@ extension CategoryViewController: UITableViewDataSource {
 //MARK: - Custom Cell Delegate Methods
 
 extension CategoryViewController: CellDelegate {
+
     func didPressDelete() {
         
     }
     
-    func didPressItems() {
+    func didPressItems(atIndex index: Int) {
         performSegue(withIdentifier: K.toItemsSegueID, sender: self)
     }
     
@@ -86,7 +89,7 @@ extension CategoryViewController: CellDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // let destinationVC = segue.destination as! ItemsViewController
+        //let destinationVC = segue.destination as! ItemsViewController
 
     }
     

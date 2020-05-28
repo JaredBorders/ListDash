@@ -103,7 +103,7 @@
     </scenes>
     <resources>
         <namedColor name="Background">
-            <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Label">
             <color red="0.31799998879432678" green="0.33300000429153442" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

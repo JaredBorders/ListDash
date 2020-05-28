@@ -9,22 +9,31 @@
 import UIKit
 
 class ItemsViewController: UIViewController {
-
+    
+    @IBOutlet weak var listTableView: UITableView!
+    var selectedCategory: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = K.backgroundColor
+        listTableView.backgroundColor = K.backgroundColor
+        
+        listTableView.dataSource = self
+        listTableView.register(UINib(nibName: K.itemCellNibName, bundle: nil), forCellReuseIdentifier: K.itemCellReuseIdentifier)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+//MARK: - Table View Data Source Methods
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ItemsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = listTableView.dequeueReusableCell(withIdentifier: K.itemCellReuseIdentifier, for: indexPath) as! ItemCell
+        return cell
+    }
 }

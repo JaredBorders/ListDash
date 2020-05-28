@@ -10,8 +10,13 @@ import Foundation
 import ChameleonFramework
 
 struct K {
-    // Cell
-    static let reusableCellID = "Cell"
+    // Category Cell
+    static let categoryCellNibName = "Cell"
+    static let categoryCellReuseIdentifier = "Cell"
+    
+    // Item Cell
+    static let itemCellNibName = "ItemCell"
+    static let itemCellReuseIdentifier = "ItemCell"
     
     // Segue
     static let toItemsSegueID = "toItemsSegue"
