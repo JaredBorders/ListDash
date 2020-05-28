@@ -13,7 +13,7 @@ class CategoryViewController: UIViewController {
     
     var tempArray = ["Homework", "Work", "Home", "Reading", "Shopping"]
     var selectedIndex: Int?
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -23,7 +23,8 @@ class CategoryViewController: UIViewController {
         tableView.backgroundColor = K.backgroundColor
         
         tableView.dataSource = self
-        tableView.register(UINib(nibName: K.categoryCellNibName, bundle: nil), forCellReuseIdentifier: K.categoryCellReuseIdentifier)
+        tableView.register(UINib(nibName:
+            K.categoryCellNibName, bundle: nil), forCellReuseIdentifier: K.categoryCellReuseIdentifier)
     }
     
     //MARK: - Add Category
@@ -40,7 +41,7 @@ class CategoryViewController: UIViewController {
             }
             
             self.tableView.reloadData()
-                
+            
         }
         
         alert.addTextField { (alertTextField) in
@@ -52,18 +53,20 @@ class CategoryViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         
     }
-
+    
 }
 
 //MARK: - Table View Data Source Methods
 
 extension CategoryViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tempArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryCellReuseIdentifier, for: indexPath) as! Cell
+        let cell = tableView.dequeueReusableCell(withIdentifier:
+            K.categoryCellReuseIdentifier, for: indexPath) as! Cell
         
         cell.delegate = self
         cell.index = indexPath.row
@@ -72,12 +75,13 @@ extension CategoryViewController: UITableViewDataSource {
         
         return cell
     }
+    
 }
 
 //MARK: - Custom Cell Delegate Methods
 
 extension CategoryViewController: CellDelegate {
-
+    
     func didPressDelete() {
         
     }
@@ -95,7 +99,7 @@ extension CategoryViewController: CellDelegate {
         guard let safeIndex = selectedIndex else { fatalError() }
         destinationVC.selectedCategory = tempArray[safeIndex]
         
-
+        
     }
     
 }

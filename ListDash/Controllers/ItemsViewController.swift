@@ -20,7 +20,8 @@ class ItemsViewController: UIViewController {
         listTableView.backgroundColor = K.backgroundColor
         
         listTableView.dataSource = self
-        listTableView.register(UINib(nibName: K.itemCellNibName, bundle: nil), forCellReuseIdentifier: K.itemCellReuseIdentifier)
+        listTableView.register(UINib(nibName:
+            K.itemCellNibName, bundle: nil), forCellReuseIdentifier: K.itemCellReuseIdentifier)
     }
     
 }
@@ -33,7 +34,8 @@ extension ItemsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let itemCell = listTableView.dequeueReusableCell(withIdentifier: K.itemCellReuseIdentifier, for: indexPath) as! ItemCell
+        let itemCell = listTableView.dequeueReusableCell(withIdentifier:
+            K.itemCellReuseIdentifier, for: indexPath) as! ItemCell
         
         itemCell.delegate = self
         itemCell.index = indexPath.row
