@@ -21,50 +21,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="110"/>
                         <color key="backgroundColor" name="Background"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-bg-63A">
-                        <rect key="frame" x="22" y="40.5" width="221" height="29"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxw-bg-63A">
+                        <rect key="frame" x="45" y="40.5" width="190" height="29"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="29" id="WIX-3f-U2f"/>
-                            <constraint firstAttribute="width" constant="221" id="mJ0-Gn-Sax"/>
+                            <constraint firstAttribute="width" constant="190" id="T6S-Hb-nG5"/>
+                            <constraint firstAttribute="height" constant="29" id="ec3-Ok-zWv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <color key="textColor" name="Label"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-4C-J1g" userLabel="deleteButton">
-                        <rect key="frame" x="265" y="40" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="EXn-2u-hBi"/>
-                            <constraint firstAttribute="width" constant="30" id="qk6-se-1eb"/>
-                        </constraints>
-                        <connections>
-                            <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Le-ww-bV6"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prz-ym-054" userLabel="itemsButton">
-                        <rect key="frame" x="310" y="39" width="30" height="30"/>
+                        <rect key="frame" x="310" y="40" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="VCl-z0-DHK"/>
-                            <constraint firstAttribute="height" constant="30" id="wGZ-w2-IT0"/>
+                            <constraint firstAttribute="height" constant="30" id="TUv-Oi-tdx"/>
+                            <constraint firstAttribute="width" constant="30" id="ol3-Wy-Ugf"/>
                         </constraints>
                         <connections>
                             <action selector="itemsButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="btA-ta-or7"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-4C-J1g" userLabel="deleteButton">
+                        <rect key="frame" x="263" y="40" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="q5K-xU-S2e"/>
+                            <constraint firstAttribute="width" constant="30" id="w5A-bx-mqE"/>
+                        </constraints>
+                        <connections>
+                            <action selector="deleteButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4Le-ww-bV6"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="prz-ym-054" firstAttribute="leading" secondItem="fwu-4C-J1g" secondAttribute="trailing" constant="15" id="7zS-9a-s00"/>
-                    <constraint firstAttribute="bottom" secondItem="fwu-4C-J1g" secondAttribute="bottom" constant="40" id="Bk8-K5-Scl"/>
-                    <constraint firstAttribute="trailing" secondItem="prz-ym-054" secondAttribute="trailing" constant="20" id="QJL-uK-hS7"/>
+                    <constraint firstItem="prz-ym-054" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BOe-HD-NfJ"/>
+                    <constraint firstAttribute="trailing" secondItem="prz-ym-054" secondAttribute="trailing" constant="20" id="GeX-EF-EUK"/>
                     <constraint firstItem="xC7-Io-EyE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Vuk-PF-z5B"/>
-                    <constraint firstItem="Dxw-bg-63A" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WLz-zb-BS2"/>
                     <constraint firstAttribute="trailing" secondItem="xC7-Io-EyE" secondAttribute="trailing" id="a5d-kj-CAo"/>
-                    <constraint firstItem="prz-ym-054" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="39" id="aRb-2d-WZ1"/>
-                    <constraint firstAttribute="bottom" secondItem="prz-ym-054" secondAttribute="bottom" constant="41" id="eE8-Wk-LJh"/>
-                    <constraint firstItem="fwu-4C-J1g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="iqZ-hI-mIF"/>
+                    <constraint firstItem="Dxw-bg-63A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="45" id="dAb-t0-iwO"/>
+                    <constraint firstItem="Dxw-bg-63A" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="f32-Kv-dkm"/>
+                    <constraint firstItem="prz-ym-054" firstAttribute="leading" secondItem="fwu-4C-J1g" secondAttribute="trailing" constant="17" id="hmQ-IA-iFC"/>
                     <constraint firstAttribute="bottom" secondItem="xC7-Io-EyE" secondAttribute="bottom" id="k1G-t8-flX"/>
-                    <constraint firstItem="Dxw-bg-63A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="22" id="r8A-zu-Avk"/>
-                    <constraint firstItem="fwu-4C-J1g" firstAttribute="leading" secondItem="Dxw-bg-63A" secondAttribute="trailing" constant="22" id="wn8-eU-6Mj"/>
+                    <constraint firstItem="fwu-4C-J1g" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xBI-lH-4y2"/>
                     <constraint firstItem="xC7-Io-EyE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="z7i-Wg-qZe"/>
                 </constraints>
             </tableViewCellContentView>
@@ -74,13 +71,13 @@
                 <outlet property="itemsButton" destination="prz-ym-054" id="8XG-2d-jiZ"/>
                 <outlet property="label" destination="Dxw-bg-63A" id="vs2-NH-LRa"/>
             </connections>
-            <point key="canvasLocation" x="-157" y="21"/>
+            <point key="canvasLocation" x="-149" y="25"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="CategoryCell" width="367" height="107"/>
         <namedColor name="Background">
-            <color red="0.92500001192092896" green="0.92500001192092896" blue="0.92500001192092896" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.92548400159999999" green="0.92548412079999998" blue="0.92548257109999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="Label">
             <color red="0.31799998879432678" green="0.33300000429153442" blue="0.34099999070167542" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

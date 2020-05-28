@@ -29,11 +29,28 @@ class ItemsViewController: UIViewController {
 
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listTableView.dequeueReusableCell(withIdentifier: K.itemCellReuseIdentifier, for: indexPath) as! ItemCell
-        return cell
+        let itemCell = listTableView.dequeueReusableCell(withIdentifier: K.itemCellReuseIdentifier, for: indexPath) as! ItemCell
+        
+        itemCell.delegate = self
+        itemCell.index = indexPath.row
+        
+        guard let text = selectedCategory else { fatalError("selected category not set") }
+        itemCell.label.text = text
+        
+        return itemCell
     }
+}
+
+//MARK: - Custom Item Cell Delegate Methods
+
+extension ItemsViewController: ItemCellDelegate {
+    
+    func didPressDelete(atIndex index: Int) {
+        print(index)
+    }
+    
 }

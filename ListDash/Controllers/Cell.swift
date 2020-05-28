@@ -20,7 +20,7 @@ class Cell: UITableViewCell {
     @IBOutlet weak var itemsButton: UIButton!
     
     var delegate: CellDelegate?
-    var index: IndexPath?
+    var index: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,11 +33,12 @@ class Cell: UITableViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        self.label.text = "Delete"
     }
     
     
     @IBAction func itemsButtonPressed(_ sender: UIButton) {
-        delegate?.didPressItems(atIndex: (index?.row)!)
+        delegate?.didPressItems(atIndex: (index!))        
     }
     
 }

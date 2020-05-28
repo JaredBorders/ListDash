@@ -12,6 +12,7 @@ import ChameleonFramework
 class CategoryViewController: UIViewController {
     
     var tempArray = ["Homework", "Work", "Home", "Reading", "Shopping"]
+    var selectedIndex: Int?
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -65,7 +66,7 @@ extension CategoryViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.categoryCellReuseIdentifier, for: indexPath) as! Cell
         
         cell.delegate = self
-        cell.index = indexPath
+        cell.index = indexPath.row
         
         cell.label.text = tempArray[indexPath.row]
         
@@ -82,14 +83,18 @@ extension CategoryViewController: CellDelegate {
     }
     
     func didPressItems(atIndex index: Int) {
+        selectedIndex = index
         performSegue(withIdentifier: K.toItemsSegueID, sender: self)
     }
     
     //MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! ItemsViewController
         
-        //let destinationVC = segue.destination as! ItemsViewController
+        guard let safeIndex = selectedIndex else { fatalError() }
+        destinationVC.selectedCategory = tempArray[safeIndex]
+        
 
     }
     

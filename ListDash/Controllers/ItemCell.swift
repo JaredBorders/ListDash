@@ -8,8 +8,17 @@
 
 import UIKit
 
-class ItemCell: UITableViewCell {
+protocol ItemCellDelegate {
+    func didPressDelete(atIndex index: Int)
+}
 
+class ItemCell: UITableViewCell {
+    
+    @IBOutlet weak var label: UILabel!
+    
+    var delegate: ItemCellDelegate?
+    var index: Int?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +27,11 @@ class ItemCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        delegate?.didPressDelete(atIndex: (index!))
+        self.label.text = "Delete"
     }
     
 }
