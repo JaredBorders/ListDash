@@ -14,6 +14,7 @@ class ItemsViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     var realm = try! Realm()
+    
     var items: Results<Item>?
     
     var selectedCategory: Category? {
@@ -29,6 +30,7 @@ class ItemsViewController: UIViewController {
         listTableView.backgroundColor = K.backgroundColor
         
         listTableView.dataSource = self
+        
         listTableView.register(UINib(nibName:
             K.itemCellNibName, bundle: nil), forCellReuseIdentifier: K.itemCellReuseIdentifier)
     }
@@ -52,19 +54,19 @@ class ItemsViewController: UIViewController {
         let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
             
-            if let currentCatefory = self.selectedCategory {
+            if let currentCategory = self.selectedCategory {
                 do {
                     try self.realm.write {
                         let newItem = Item()
                         newItem.title = textField.text!
                         newItem.dateCreated = Date()
-                        currentCatefory.items.append(newItem)
+                        currentCategory.items.append(newItem)
                     }
                 } catch {
                     print("Error Saving Items: \(error)")
                 }
             }
-                        
+            
             self.listTableView.reloadData()
             
         }
@@ -81,7 +83,7 @@ class ItemsViewController: UIViewController {
     
 }
 
-//MARK: - Table View Data Source Methods
+//MARK: - Table View Data Source & Delegate Methods
 
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,6 +96,7 @@ extension ItemsViewController: UITableViewDataSource {
         
         itemCell.delegate = self
         itemCell.index = indexPath.row
+        itemCell.myImageView.image = (items?[indexPath.row].done) ?? false ? UIImage(named: K.ItemCell_Checked) : UIImage(named: K.ItemCell_Unchecked)
         
         let text = items?[indexPath.row].title ?? "No Items Yet"
         itemCell.label.text = text
@@ -105,6 +108,22 @@ extension ItemsViewController: UITableViewDataSource {
 //MARK: - Custom Item Cell Delegate Methods
 
 extension ItemsViewController: ItemCellDelegate {
+    
+    func didPressCheckMark(atIndex index: Int) {
+        if let item = items?[index] {
+            
+            do {
+                try realm.write {
+                    item.done.toggle()
+                }
+            } catch {
+                print("Error Saving Done Status \(error)")
+            }
+            
+        }
+        
+        listTableView.reloadData()
+    }
     
     func didPressDelete(atIndex index: Int) {
         

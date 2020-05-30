@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "itemCell_Light-1.png",
+      "filename" : "itemCell_unchecked_light-1.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "itemCell_Light.png",
+      "filename" : "itemCell_unchecked_light.png",
       "idiom" : "universal"
     },
     {
@@ -21,7 +21,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "itemCell_dark.png",
+      "filename" : "itemCell_unchecked_dark.png",
       "idiom" : "universal"
     }
   ],

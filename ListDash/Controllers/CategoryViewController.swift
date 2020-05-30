@@ -11,13 +11,13 @@ import RealmSwift
 
 class CategoryViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let realm = try! Realm()
     
     var categories: Results<Category>?
     
     var selectedIndex: Int?
-    
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class CategoryViewController: UIViewController {
         tableView.backgroundColor = K.backgroundColor
         
         tableView.dataSource = self
+        
         tableView.register(UINib(nibName:
             K.categoryCellNibName, bundle: nil), forCellReuseIdentifier: K.categoryCellReuseIdentifier)
     }
@@ -71,12 +72,11 @@ class CategoryViewController: UIViewController {
     //MARK: - Save & Load
     
     func saveCategories(category: Category) {
+        
         do {
-            
             try realm.write {
                 realm.add(category)
             }
-            
         } catch {
             print("Error Saving: \(error)")
         }

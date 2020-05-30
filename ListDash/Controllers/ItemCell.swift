@@ -10,10 +10,12 @@ import UIKit
 
 protocol ItemCellDelegate {
     func didPressDelete(atIndex index: Int)
+    func didPressCheckMark(atIndex index: Int)
 }
 
 class ItemCell: UITableViewCell {
     
+    @IBOutlet var myImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     
     var delegate: ItemCellDelegate?
@@ -21,7 +23,6 @@ class ItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -30,8 +31,11 @@ class ItemCell: UITableViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        delegate?.didPressDelete(atIndex: (index!))
-        self.label.text = "Delete"
+        delegate?.didPressDelete(atIndex: index!)
     }
     
+    @IBAction func checkMarkButtonPressed(_ sender: UIButton) {
+        delegate?.didPressCheckMark(atIndex: index!)
+        print("CHECK PRESSSSEDDDDDD")
+    }
 }

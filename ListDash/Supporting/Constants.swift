@@ -10,6 +10,7 @@ import Foundation
 import ChameleonFramework
 
 struct K {
+    
     // Category Cell
     static let categoryCellNibName = "Cell"
     static let categoryCellReuseIdentifier = "Cell"
@@ -17,8 +18,10 @@ struct K {
     // Item Cell
     static let itemCellNibName = "ItemCell"
     static let itemCellReuseIdentifier = "ItemCell"
+    static let ItemCell_Checked = "ItemCell_Checked"
+    static let ItemCell_Unchecked = "ItemCell_Unchecked"
     
-    // Segue
+    // Segue to ItemsViewController
     static let toItemsSegueID = "toItemsSegue"
     
     // Color(s)
