@@ -7,17 +7,22 @@
 //
 
 import UIKit
-import ChameleonFramework
+import RealmSwift
 
 class CategoryViewController: UIViewController {
     
-    var tempArray = ["Homework", "Work", "Home", "Reading", "Shopping"]
+    let realm = try! Realm()
+    
+    var categories: Results<Category>?
+    
     var selectedIndex: Int?
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadCategories()
         
         view.backgroundColor = K.backgroundColor
         tableView.backgroundColor = K.backgroundColor
@@ -37,7 +42,16 @@ class CategoryViewController: UIViewController {
         let action = UIAlertAction(title: "Add Category", style: .default) { (action) in
             
             if let text = textField.text {
-                self.tempArray.append(text)
+                
+                let newCategory = Category()
+                
+                newCategory.name = text
+                
+                // self.categories.append(newCategory)
+                // The Results data type is auto-updating. Above code is unnecessary.
+                
+                self.saveCategories(category: newCategory)
+                
             }
             
             self.tableView.reloadData()
@@ -54,6 +68,26 @@ class CategoryViewController: UIViewController {
         
     }
     
+    //MARK: - Save & Load
+    
+    func saveCategories(category: Category) {
+        do {
+            
+            try realm.write {
+                realm.add(category)
+            }
+            
+        } catch {
+            print("Error Saving: \(error)")
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func loadCategories() {
+        categories = realm.objects(Category.self)
+    }
+    
 }
 
 //MARK: - Table View Data Source Methods
@@ -61,7 +95,7 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempArray.count
+        return categories?.count ?? 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -71,7 +105,7 @@ extension CategoryViewController: UITableViewDataSource {
         cell.delegate = self
         cell.index = indexPath.row
         
-        cell.label.text = tempArray[indexPath.row]
+        cell.label.text = categories?[indexPath.row].name ?? "No Categories Added Yet"
         
         return cell
     }
@@ -82,7 +116,19 @@ extension CategoryViewController: UITableViewDataSource {
 
 extension CategoryViewController: CellDelegate {
     
-    func didPressDelete() {
+    func didPressDelete(atIndex index: Int) {
+        
+        if let category = categories?[index] {
+            do {
+                try realm.write {
+                    realm.delete(category)
+                }
+            } catch {
+                print("Error Deleting Category: \(error)")
+            }
+        }
+        
+        tableView.reloadData()
         
     }
     
@@ -97,7 +143,7 @@ extension CategoryViewController: CellDelegate {
         let destinationVC = segue.destination as! ItemsViewController
         
         guard let safeIndex = selectedIndex else { fatalError() }
-        destinationVC.selectedCategory = tempArray[safeIndex]
+        destinationVC.selectedCategory = categories?[safeIndex]
         
         
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CellDelegate {
-    func didPressDelete()
+    func didPressDelete(atIndex index: Int)
     func didPressItems(atIndex index: Int)
 }
 
@@ -33,7 +33,7 @@ class Cell: UITableViewCell {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        self.label.text = "Delete"
+        delegate?.didPressDelete(atIndex: (index!))
     }
     
     

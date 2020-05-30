@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ItemsViewController: UIViewController {
     
     @IBOutlet weak var listTableView: UITableView!
-    var selectedCategory: String?
+    
+    var realm = try! Realm()
+    var items: Results<Item>?
+    
+    var selectedCategory: Category? {
+        didSet {
+            loadItems()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +33,59 @@ class ItemsViewController: UIViewController {
             K.itemCellNibName, bundle: nil), forCellReuseIdentifier: K.itemCellReuseIdentifier)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        title = selectedCategory!.name
+    }
+    
+    //MARK: - Load Items
+    
+    func loadItems() {
+        items = selectedCategory?.items.sorted(byKeyPath: "dateCreated", ascending: true)
+    }
+    
+    //MARK: - Add Category
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+            
+            if let currentCatefory = self.selectedCategory {
+                do {
+                    try self.realm.write {
+                        let newItem = Item()
+                        newItem.title = textField.text!
+                        newItem.dateCreated = Date()
+                        currentCatefory.items.append(newItem)
+                    }
+                } catch {
+                    print("Error Saving Items: \(error)")
+                }
+            }
+                        
+            self.listTableView.reloadData()
+            
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "New Item"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 
 //MARK: - Table View Data Source Methods
 
 extension ItemsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,7 +95,7 @@ extension ItemsViewController: UITableViewDataSource {
         itemCell.delegate = self
         itemCell.index = indexPath.row
         
-        guard let text = selectedCategory else { fatalError("selected category not set") }
+        let text = items?[indexPath.row].title ?? "No Items Yet"
         itemCell.label.text = text
         
         return itemCell
@@ -52,7 +107,18 @@ extension ItemsViewController: UITableViewDataSource {
 extension ItemsViewController: ItemCellDelegate {
     
     func didPressDelete(atIndex index: Int) {
-        print(index)
+        
+        if let item = items?[index] {
+            do {
+                try realm.write {
+                    realm.delete(item)
+                }
+            } catch {
+                print("Error Deleting Item: \(error)")
+            }
+        }
+        
+        listTableView.reloadData()
     }
     
 }

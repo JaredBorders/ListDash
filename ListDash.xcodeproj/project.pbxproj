@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C11CC589288663B22D572A9 /* Pods_ListDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46E25D5AF2F69CBA793E025 /* Pods_ListDash.framework */; };
+		B80415FA2481B28400088465 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80415F92481B28400088465 /* Category.swift */; };
+		B80415FC2481B29E00088465 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80415FB2481B29E00088465 /* Item.swift */; };
 		B80E0BCC248050CC009FEC55 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80E0BCA248050CC009FEC55 /* ItemCell.swift */; };
 		B80E0BCD248050CC009FEC55 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B80E0BCB248050CC009FEC55 /* ItemCell.xib */; };
 		B83CE8D4247E11AB0014FA35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8D3247E11AB0014FA35 /* AppDelegate.swift */; };
@@ -20,10 +21,14 @@
 		B83CE8EA247E12720014FA35 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B83CE8E8247E12720014FA35 /* Cell.xib */; };
 		B83CE8EC247E12880014FA35 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8EB247E12880014FA35 /* ItemsViewController.swift */; };
 		B83CE8F1247E12D20014FA35 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83CE8F0247E12D20014FA35 /* Constants.swift */; };
+		E621B2669482E3FA9CE0443D /* Pods_ListDash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDD6E42767155CA72047BDE /* Pods_ListDash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7BC19371DD8285031AF64D1C /* Pods-ListDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListDash.release.xcconfig"; path = "Target Support Files/Pods-ListDash/Pods-ListDash.release.xcconfig"; sourceTree = "<group>"; };
+		095AE819E5DAE7ED89D22651 /* Pods-ListDash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListDash.release.xcconfig"; path = "Target Support Files/Pods-ListDash/Pods-ListDash.release.xcconfig"; sourceTree = "<group>"; };
+		1DDD6E42767155CA72047BDE /* Pods_ListDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B80415F92481B28400088465 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B80415FB2481B29E00088465 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B80E0BCA248050CC009FEC55 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		B80E0BCB248050CC009FEC55 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		B83CE8D0247E11AB0014FA35 /* ListDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,8 +43,7 @@
 		B83CE8E8247E12720014FA35 /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		B83CE8EB247E12880014FA35 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		B83CE8F0247E12D20014FA35 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E8A7A50D31E35BDC22C656BE /* Pods-ListDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListDash.debug.xcconfig"; path = "Target Support Files/Pods-ListDash/Pods-ListDash.debug.xcconfig"; sourceTree = "<group>"; };
-		F46E25D5AF2F69CBA793E025 /* Pods_ListDash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListDash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9BC06C67D9457B81C8A1C44 /* Pods-ListDash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListDash.debug.xcconfig"; path = "Target Support Files/Pods-ListDash/Pods-ListDash.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C11CC589288663B22D572A9 /* Pods_ListDash.framework in Frameworks */,
+				E621B2669482E3FA9CE0443D /* Pods_ListDash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,10 +61,19 @@
 		7F29E20CAFFC0EBEC98CA942 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E8A7A50D31E35BDC22C656BE /* Pods-ListDash.debug.xcconfig */,
-				7BC19371DD8285031AF64D1C /* Pods-ListDash.release.xcconfig */,
+				E9BC06C67D9457B81C8A1C44 /* Pods-ListDash.debug.xcconfig */,
+				095AE819E5DAE7ED89D22651 /* Pods-ListDash.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B80415FD2481B2AC00088465 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B80415F92481B28400088465 /* Category.swift */,
+				B80415FB2481B29E00088465 /* Item.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B83CE8C7247E11AB0014FA35 = {
@@ -69,7 +82,7 @@
 				B83CE8D2247E11AB0014FA35 /* ListDash */,
 				B83CE8D1247E11AB0014FA35 /* Products */,
 				7F29E20CAFFC0EBEC98CA942 /* Pods */,
-				C02142A69C0AB92E0155C6E9 /* Frameworks */,
+				EA3DF76036A7B4B3517DA944 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +99,7 @@
 			children = (
 				B83CE8D3247E11AB0014FA35 /* AppDelegate.swift */,
 				B83CE8D5247E11AB0014FA35 /* SceneDelegate.swift */,
+				B80415FD2481B2AC00088465 /* Models */,
 				B83CE8EF247E12BA0014FA35 /* Supporting */,
 				B83CE8ED247E12950014FA35 /* Controllers */,
 				B83CE8EE247E12A10014FA35 /* Views */,
@@ -125,10 +139,10 @@
 			path = Supporting;
 			sourceTree = "<group>";
 		};
-		C02142A69C0AB92E0155C6E9 /* Frameworks */ = {
+		EA3DF76036A7B4B3517DA944 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F46E25D5AF2F69CBA793E025 /* Pods_ListDash.framework */,
+				1DDD6E42767155CA72047BDE /* Pods_ListDash.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,11 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B83CE8E4247E11AB0014FA35 /* Build configuration list for PBXNativeTarget "ListDash" */;
 			buildPhases = (
-				DD157A0243ED7D833E1F6EB2 /* [CP] Check Pods Manifest.lock */,
+				0A0113F712894F3C19E9C615 /* [CP] Check Pods Manifest.lock */,
 				B83CE8CC247E11AB0014FA35 /* Sources */,
 				B83CE8CD247E11AB0014FA35 /* Frameworks */,
 				B83CE8CE247E11AB0014FA35 /* Resources */,
-				62B70E531C3555A7976A6151 /* [CP] Embed Pods Frameworks */,
+				BA99C28482571A1D1F7754D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,24 +218,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62B70E531C3555A7976A6151 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DD157A0243ED7D833E1F6EB2 /* [CP] Check Pods Manifest.lock */ = {
+		0A0113F712894F3C19E9C615 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,6 +240,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BA99C28482571A1D1F7754D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ListDash/Pods-ListDash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -251,12 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B83CE8EC247E12880014FA35 /* ItemsViewController.swift in Sources */,
+				B80415FC2481B29E00088465 /* Item.swift in Sources */,
 				B83CE8D8247E11AB0014FA35 /* CategoryViewController.swift in Sources */,
 				B83CE8E9247E12720014FA35 /* Cell.swift in Sources */,
 				B83CE8D4247E11AB0014FA35 /* AppDelegate.swift in Sources */,
 				B80E0BCC248050CC009FEC55 /* ItemCell.swift in Sources */,
 				B83CE8D6247E11AB0014FA35 /* SceneDelegate.swift in Sources */,
 				B83CE8F1247E12D20014FA35 /* Constants.swift in Sources */,
+				B80415FA2481B28400088465 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +414,7 @@
 		};
 		B83CE8E5247E11AB0014FA35 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8A7A50D31E35BDC22C656BE /* Pods-ListDash.debug.xcconfig */;
+			baseConfigurationReference = E9BC06C67D9457B81C8A1C44 /* Pods-ListDash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -418,7 +434,7 @@
 		};
 		B83CE8E6247E11AB0014FA35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BC19371DD8285031AF64D1C /* Pods-ListDash.release.xcconfig */;
+			baseConfigurationReference = 095AE819E5DAE7ED89D22651 /* Pods-ListDash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
