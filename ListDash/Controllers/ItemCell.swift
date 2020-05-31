@@ -36,6 +36,5 @@ class ItemCell: UITableViewCell {
     
     @IBAction func checkMarkButtonPressed(_ sender: UIButton) {
         delegate?.didPressCheckMark(atIndex: index!)
-        print("CHECK PRESSSSEDDDDDD")
     }
 }
