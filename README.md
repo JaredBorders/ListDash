@@ -3,11 +3,11 @@ ListDash is a natively built iOS app that provides the user with an effective wa
 
 ## Technologies
 * UIKit <br />
-* * The UIKit framework was used extensively to implement TableViews and custom TableView Cells
+  * The UIKit framework was used extensively to implement TableViews and custom TableView Cells
 * Auto Layout <br />
-* * The app’s UI was built using auto layout constraints and storyboards
+  * The app’s UI was built using auto layout constraints and storyboards
 * Realm Database <br />
-* * Data in ListDash is persisted via the [Realm Platform](https://docs.realm.io/sync/what-is-realm-platform)
+  * Data in ListDash is persisted via the [Realm Platform](https://docs.realm.io/sync/what-is-realm-platform)
 * [Figma](https://www.figma.com) <br />
 
 ## Features
