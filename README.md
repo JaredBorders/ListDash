@@ -16,3 +16,20 @@ Data persistent user data and neumorphic UI
 Simply run project with Xcode (version 9.0+) from the app store
 
 ## Demo
+
+### Categories
+<p align="center">
+  <img src="/X/category_light.png?raw=true" width="300" height="300" alt="Category Screen Light"/>
+  <img src="/X/category_dark.png?raw=true" width="300" height="300" alt="Category Screen Dark"/>
+</p>
+
+### Items
+<p align="center">
+  <img src="/X/Items_light.png?raw=true" width="300" height="300" alt="Items Screen Light"/>
+  <img src="/X/Items_dark.png?raw=true" width="300" height="300" alt="Items Screen Dark"/>
+</p>
+
+### Add Items/Categories
+<p align="center">
+  <img src="/X/add_light.png?raw=true" width="300" height="300" alt="Add Items/Categories Screen Light"/>
+</p>
